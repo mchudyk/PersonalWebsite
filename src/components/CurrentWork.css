@@ -1,0 +1,54 @@
+.current-work {
+    display: flex; /* Enables flexbox layout */
+    background-color: #FFF8E7; /* Cream background */
+    color: #957DAD; /* Lavender for text */
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    border-bottom: 0.5px solid #957DAD; 
+  }
+  
+  .current-work .heading {
+    flex: 1; /* Takes up 1/3 of the space */
+    max-width: 33.33%; /* Limits width to 1/3 */
+  }
+  
+  .current-work .content {
+    flex: 2; /* Takes up the remaining 2/3 of the space */
+    padding-left: 2rem; /* Spacing between the heading and the content */
+  }
+  
+  .current-work p {
+    font-size: 1rem;
+    line-height: 1.6;
+    /* margin-bottom: 0.75rem; */
+  }
+
+  /*ADDED FOR SCROLLING*/
+  
+  /* .about-me .content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+  
+  .about-me .content.show {
+    opacity: 1;
+    transform: none;
+  }
+   */
+
+   .current-work .content {
+    opacity: 0;
+    transform: translateY(50px); /* Start lower to enhance the moving effect */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  }
+  
+  .current-work .content.show {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+  
