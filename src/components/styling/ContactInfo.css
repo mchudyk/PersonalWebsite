@@ -1,0 +1,48 @@
+.contact-info {
+  background-color: #a2d2ff;
+  color: #221e22;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 20px 20px;
+  padding-bottom: 10px;
+  color: #221e22;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative; 
+}
+
+.social-link img {
+  width: 24px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.social-link:hover {
+  color: #221e22;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px; 
+  left: 50%;
+  background-color: #221e22;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.social-link:hover::after {
+  width: 100%; 
+  left: 0;
+}

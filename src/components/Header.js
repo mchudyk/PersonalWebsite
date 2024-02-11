@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css'
+import './styling/Header.css'
 
 function Header() {
     return (
@@ -10,10 +10,10 @@ function Header() {
           <a href="#experience">Experience & Projects</a>
           <a href="#current">What I'm Working On</a>
           <a href="#contact">Contact</a>
+          <a href="https://drive.google.com/file/d/18jMfopl_vGMTwvWFCSV1_svfIpdZkYTF/view?usp=sharing" id="resume" target="_blank" rel="noreferrer noopener">Resume</a>
         </nav>
       </header>
     );
   }
-  
 
 export default Header;

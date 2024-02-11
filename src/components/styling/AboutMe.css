@@ -1,0 +1,40 @@
+.about-me {
+    display: flex;
+    background-color: white;
+    color: #221e22; 
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    border-bottom: 1px solid #221e22; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-me .heading {
+    flex: 1; 
+    max-width: 33.33%; 
+  }
+  
+  .about-me .content {
+    flex: 2; 
+    padding-left: 2rem; 
+  }
+  
+  .about-me p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+   .about-me .content {
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  }
+  
+  .about-me .content.show {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  

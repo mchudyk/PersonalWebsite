@@ -1,0 +1,38 @@
+.current-work {
+  display: flex; 
+  background-color: white; 
+  color: #221e22; 
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-top: 11rem;
+  padding-bottom: 11rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  border-bottom: 1px solid #221e22; 
+}
+
+.current-work .heading {
+  flex: 1; 
+  max-width: 33.33%; 
+}
+
+.current-work .content {
+  flex: 2; 
+  padding-left: 2rem; 
+}
+
+.current-work p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.current-work .content {
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.current-work .content.show {
+  opacity: 1;
+  transform: translateY(0); 
+}

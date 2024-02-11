@@ -1,0 +1,36 @@
+.home-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh; 
+  background-size: cover; 
+  background-position: center; 
+  color: white; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 4); 
+  position: relative; 
+  padding-right: 40%;
+  border-bottom: 1px solid #221e22; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.home-banner h1 {
+  font-size: 2.8rem; 
+  margin: 0; 
+  border-radius: 10px; 
+}
+
+.typed-text {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #a2d2ff;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.typed-text::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  opacity: 1;
+}

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './ExperienceProjects.css'; // Make sure to create this CSS file
-import experience1 from '../experience1.jpg';
-import experience2 from '../experience2.jpg';
-import experience3 from '../experience3.jpg';
-import experience4 from '../experience4.jpg';
+import './styling/ExperienceProjects.css';
+import experience1 from '../photos/experience1.jpg';
+import experience2 from '../photos/experience2.jpg';
+import experience3 from '../photos/experience3.jpg';
+import experience4 from '../photos/experience4.jpg';
 
-// Sample data for experiences/projects
 const experiences = [
   {
     id: 1,
@@ -22,72 +21,63 @@ const experiences = [
   {
     id: 3,
     title: "Plagiarism Detector",
-    description: "Devised a method that boosted plagiarism detection by 20%, greatly improving the effectiveness of content assessments. Implemented NLP algorithms with Python, leveraging libraries Gensim and Scikit-learn to compare data for similarities.",
+    description: "I conducted a comprehensive theoretical analysis to evaluate 3 major methods for detecting plagiarism. By developing optimized hash functions, I successfully engineered an effective plagiarism detection system that demonstrated exceptional accuracy on the test dataset (93%). I performed a detailed examination of the system's performance, focusing on the scalability of running time and memory consumption. This analysis not only highlights the efficiency of the detection algorithm but also underscores its potential for handling large datasets in software engineering applications.",
     imageUrl: experience3,
   },
   {
     id: 4,
-    title: "Telegram Wrapper",
-    description: "Developed a platform that creates a summary of telegram usage including statics (e.g, the average time spend texting with people, the most frequent emojies used). ",
+    title: "Telegram Wrapped",
+    description: "I designed and implemented a platform that generates detailed analytics of Telegram usage. This platform offers insights such as average texting duration, the most commonly used emojis, and other key statistics. Additionally, it features a customizable query interface that allows users to explore specific aspects of their activity. These queries are processed and analyzed using the OpenAI API, leveraging natural language processing techniques to provide tailored responses. ",
     imageUrl: experience4,
   },
 ];
 
 function ExperienceProjects() {
-    const [activeExperience, setActiveExperience] = useState(experiences[0]);
-  
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            } else {
-              entry.target.classList.remove("show");
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-  
-      document.querySelectorAll('.experience-projects > div').forEach((div) => {
-        observer.observe(div);
-      });
-  
-      return () => {
-        observer.disconnect();
-      };
-    }, []);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setActiveExperience((prev) => experiences[(experiences.indexOf(prev) + 1) % experiences.length]);
-      }, 6000); // Corrected to change every 10 seconds as per the comment
-  
-      return () => clearInterval(interval);
-    }, []);
-  
-    return (
-      <div className="experience-projects" id="experience">
-        <div className="description">
-        <h2>{activeExperience.title}</h2>
-        <div className='active-experience'>
-        <p>{activeExperience.description}</p>
-        </div>
-        <img src={activeExperience.imageUrl} alt={activeExperience.title} style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
-      </div>
-      <div className="list">
-        {experiences.map((experience) => (
-        <div 
-            key={experience.id} 
-            onClick={() => setActiveExperience(experience)}
-            className={`experience-item ${activeExperience.id === experience.id ? 'active' : ''}`} // Conditional class application
-        >
-            {experience.title}
-         </div>
-  ))}
-</div>
+  const [activeExperience, setActiveExperience] = useState(experiences[0]);
+  const [userHasInteracted, setUserHasInteracted] = useState(false);
 
+  const changeExperience = () => {
+    setActiveExperience((prev) => {
+      const currentIndex = experiences.findIndex(experience => experience.id === prev.id);
+      const nextIndex = (currentIndex + 1) % experiences.length;
+      return experiences[nextIndex];
+    });
+  };
+
+  useEffect(() => {
+    if (!userHasInteracted) {
+      const interval = setInterval(changeExperience, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [userHasInteracted]);
+
+  const handleUserInteraction = (experience) => {
+    setUserHasInteracted(true);
+    setActiveExperience(experience);
+  };
+
+  return (
+    <div className="experience-projects">
+      <div className="photo-frame">
+        <img src={activeExperience.imageUrl} alt={activeExperience.title} />
+      </div>
+      <div className="details">
+        <nav className="navigation-bar">
+          {experiences.map((experience) => (
+            <button 
+              key={experience.id} 
+              onClick={() => handleUserInteraction(experience)}
+              className={activeExperience.id === experience.id ? 'nav-item active' : 'nav-item'}
+            >
+              {experience.title}
+            </button>
+          ))}
+        </nav>
+        <div className="description">
+          <h2>{activeExperience.title}</h2>
+          <p>{activeExperience.description}</p>
+        </div>
+      </div>
     </div>
   );
 }

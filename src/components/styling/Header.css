@@ -1,0 +1,71 @@
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 10%;
+  border-bottom: 1px solid #221e22; 
+  position: fixed;
+  width: 100%;
+  padding-left: 5%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.App-header nav {
+  display: flex;
+  align-items: center;
+  padding-right: 10%;
+}
+
+#resume {
+  padding: 0.75rem 1rem; 
+  border: 1px solid #cccccc; 
+  background-color: #a2d2ff;
+  color: #221e22; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05); 
+  text-decoration: none; 
+  transition: all 0.3s ease; 
+}
+
+#resume:hover {
+  background-color: #7cb9f1; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+.App-header nav a, .App-header .name-link {
+  text-decoration: none;
+  position: relative;
+  color: #221e22;
+  margin: 0 0.5rem;
+  padding: 0.75rem 1rem; 
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.App-header nav a:not(#resume)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px; 
+  bottom: 0; 
+  left: 50%; 
+  background-color: #a2d2ff; 
+  transition: width 0.3s ease, left 0.3s ease; 
+}
+
+.App-header nav a:not(#resume):hover::after {
+  width: 90%; 
+  left: 5%; 
+}
+
+.name-link {
+  color: #a2d2ff;
+  font-weight: bold;
+  margin-right: auto;
+  font-size: 1.4rem;
+}

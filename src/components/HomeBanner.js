@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import mykhailochudyk from '../mykhailochudyk2.jpg';
-import './HomeBanner.css';
+import mykhailochudyk from '../photos/background.jpg';
+import './styling/HomeBanner.css';
 
-const phrases = ["software engineer", "youth leader", "problem solver"];
+const phrases = ["software engineer", "youth leader", "problem solver", "project manager"];
 
 function HomeBanner() {
   const [text, setText] = useState('');
-  const [index, setIndex] = useState(0); // Tracks the current character index
-  const [phraseIndex, setPhraseIndex] = useState(0); // Tracks the current phrase
+  const [index, setIndex] = useState(0); 
+  const [phraseIndex, setPhraseIndex] = useState(0); 
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
@@ -15,28 +15,24 @@ function HomeBanner() {
 
     if (isDeleting) {
       if (index > 0) {
-        // Deleting characters
         setTimeout(() => {
           setText((text) => text.slice(0, text.length - 1));
           setIndex((index) => index - 1);
-        }, 100); // Slower deletion speed
+        }, 100); 
       } else {
-        // Once deletion is complete, start typing the next phrase
         setIsDeleting(false);
         setPhraseIndex((phraseIndex) => (phraseIndex + 1) % phrases.length);
       }
     } else {
       if (index < phrases[phraseIndex].length) {
-        // Typing characters
         timeoutId = setTimeout(() => {
           setText((text) => text + phrases[phraseIndex].charAt(index));
           setIndex((index) => index + 1);
-        }, 200); // Slower typing speed
+        }, 200);
       } else {
-        // Once typing is complete, pause before starting deletion
         timeoutId = setTimeout(() => {
           setIsDeleting(true);
-        }, 2000); // 3-second pause before deletion
+        }, 2000); 
       }
     }
 

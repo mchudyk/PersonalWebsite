@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './CurrentWork.css'; // Ensure this path is correct
+import './styling/CurrentWork.css'; // Ensure this path is correct
 
 function CurrentWork() {
   useEffect(() => {

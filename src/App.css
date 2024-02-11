@@ -8,8 +8,9 @@ body {
   margin: 0;
   font-family: 'Merriweather', sans-serif; /* Or 'Montserrat', sans-serif; */
   /* font-family: 'Merriweather', sans-serif;  */
-  background-color: #FFF8E7; /* Bright background */
-  color: #333; /* Standard text color for readability */
+  background-color: #a2d2ff; /* Bright background */
+  /*color: #333; /* Standard text color for readability */
+  color: #2A2928;
 }
 
 a {
