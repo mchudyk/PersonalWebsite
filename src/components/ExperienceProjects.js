@@ -40,7 +40,7 @@ function ExperienceProjects() {
   };
 
   return (
-    <div className="experience-projects">
+    <div className="experience-projects" id = "experience-projects">
       <nav className="navigation-bar">
         {experiences.map((experience) => (
           <button
