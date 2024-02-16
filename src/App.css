@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: 'Merriweather', sans-serif; /* Or 'Montserrat', sans-serif; */
   /* font-family: 'Merriweather', sans-serif;  */
-  background-color: #a2d2ff; /* Bright background */
+  background-color: white; /* Bright background */
   /*color: #333; /* Standard text color for readability */
   color: #2A2928;
 }
@@ -33,11 +33,11 @@ a:hover {
 }
 
 .button:hover {
-  background-color: #e0a800; /* Darker shade of secondary color */
+  background-color: #e0a800; 
 }
 
 .header {
-  background-color: #007BFF; /* Primary color */
+  background-color: #007BFF; 
   color: #fff;
   padding: 20px 0;
   text-align: center;

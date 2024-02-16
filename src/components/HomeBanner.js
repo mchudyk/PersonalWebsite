@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import mykhailochudyk from '../photos/background.jpg';
 import './styling/HomeBanner.css';
 
-const phrases = ["software engineer", "youth leader", "problem solver", "project manager"];
+const phrases = ["software engineer", "youth leader", "problem solver", "Ukrainian"];
 
 function HomeBanner() {
   const [text, setText] = useState('');
